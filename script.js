@@ -24,6 +24,28 @@ const enableNotifications = async () => {
     checkPermission();
     await requestNotificationPermission();  
     await registerSW();
+    document.getElementById('sendNotificationBtn').style.display = 'block';
+};
+
+const showAdminLoginForm = () => {
+    document.getElementById('adminLoginForm').style.display = 'block';
+};
+
+const validateLogin = () => {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    
+    // Perform validation
+    if (username === 'gundeep' && password === 'qwerty') {
+        document.getElementById('sendNotificationBtn').style.display = 'block';
+        document.getElementById('adminLoginForm').style.display = 'none';
+        document.getElementById('enableNotifications').style.display = 'none';
+        document.getElementById('showAdminLoginForm').style.display = 'none';
+        return false; // Prevent form submission
+    } else {
+        alert('Invalid credentials. Please try again.');
+        return false;
+    }
 };
 
 const sendNotification = async () => {
