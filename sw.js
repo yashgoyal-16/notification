@@ -32,7 +32,7 @@ self.addEventListener("activate",async (e) => {
     console.log(response);
 })
 self.addEventListener('push', e => {
-    self.registration.showNotification('Wohoooo', {body:e.data.text() })
+    self.registration.showNotification('New Notice', {body:e.data.text() })
     
 });
 

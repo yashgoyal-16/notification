@@ -31,7 +31,7 @@ const sendNotification = async () => {
     const response = await fetch('http://localhost:3000/send-notification', {
         method: 'post',
         headers: { 'Content-type': "application/json" },
-        body: JSON.stringify({ message: "Event is organized!" })
+        body: JSON.stringify({ message: "New Notice from EdConnect Noticeboard!" })
     });
     const result = await response.json();
     console.log(result);
@@ -74,5 +74,5 @@ self.addEventListener("activate", async (e) => {
 });
 
 self.addEventListener('push', e => {
-    self.registration.showNotification('Wohoooo', {body:e.data.text() });
+    self.registration.showNotification('New Notice ', {body:e.data.text() });
 });
