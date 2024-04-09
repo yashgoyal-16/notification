@@ -6,8 +6,19 @@
     <title>Document</title>
 </head>
 <body>
+    <button id="enableNotifications" onclick="enableNotifications()">Enable notifications</button>
+    <button id="showAdminLoginForm" onclick="showAdminLoginForm()">Is Admin</button>
+    <div id="adminLoginForm" style="display: none;">
+        <h2>Admin Login</h2>
+        <form id="loginForm" onsubmit="return validateLogin()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    <button id="sendNotificationBtn" style="display: none;" onclick="sendNotification()">Send Notification</button>
     <script src="script.js"></script>
-    <button onclick="enableNotifications()">Enable notifications</button>
-    <button onclick="sendNotification()">Send Notification</button> <!-- New button for sending notification -->
 </body>
 </html>
